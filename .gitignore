@@ -1,0 +1,15 @@
+*.groovy
+.classpath
+.gradle
+.project
+.settings
+/build
+/bin
+/html
+/javadoc
+archive/
+gradle.properties
+/.idea
+*.iml
+out/
+.DS_Store
