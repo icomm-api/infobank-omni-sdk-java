@@ -6,7 +6,7 @@
 SDK를 이용하면 JAVA 환경에서 편리하게 API 연동이 가능합니다.
 
 ## Documentation
-OMNI API의 규격서는 [여기](https://omniapi.gitbook.io/omni-api-specification/)를 참조합니다.
+OMNI API의 규격서는 [여기](https://infobank-guide.gitbook.io/omni_api/)를 참조합니다.
 
 ## Requirements
 - API사용을 위한 [계정 생성](https://bizgo.io)을 합니다.
