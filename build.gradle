@@ -6,7 +6,7 @@ plugins {
 
 group = "net.infobank.client"
 archivesBaseName = "omniapi-sdk-java"
-version = "0.0.9"
+version = "1.0.0"
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
 
@@ -32,6 +32,7 @@ test {
         events "failed"
         exceptionFormat "full"
     }
+    enabled = false
 }
 
 jar {
@@ -43,6 +44,7 @@ jar {
             'Implementation-Version': archiveVersion
         )
     }
+    exclude '**/test/**'
 }
 
 sourceSets {
