@@ -1,0 +1,108 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'com.github.johnrengelman.shadow' version '8.1.1'
+}
+
+group = "io.github.icomm-api"
+archivesBaseName = "infobank-omni-sdk-java"
+version = "1.0.0"
+sourceCompatibility = "1.8"
+targetCompatibility = "1.8"
+
+//ext.githubPath = 'Infobank/omniapi-sdk-java'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.apache.httpcomponents:httpclient:4.5.14'
+    implementation 'org.apache.httpcomponents:httpmime:4.5.14'
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.mockito:mockito-inline:4.11.0'
+    implementation('org.apache.tika:tika-core:2.2.1') {
+        exclude group: 'org.slf4j', module: 'slf4j-api'
+    }
+
+}
+
+test {
+    testLogging {
+        events "failed"
+        exceptionFormat "full"
+    }
+}
+
+jar {
+    manifest {
+        attributes(
+            'Created-By': 'Infobank',
+            'Implementation-Vendor': 'Infobank',
+            'Implementation-Title': 'Infobank OMNIAPI JAVA SDK',
+            'Implementation-Version': archiveVersion
+        )
+    }
+}
+
+publishing {
+    publications {
+        mavenJava(MavenPublication) {
+            artifactId = "infobank-omni-sdk-java"
+
+            artifact shadowJar
+
+            pom {
+                name = "Infobank OMNI SDK for Java"
+                description = "Official Java SDK for Infobank OMNI API"
+                url = "https://github.com/icomm-api/infobank-omni-sdk-java"
+                licenses {
+                    license {
+                        name = "The Apache License, Version 2.0"
+                        url = "http://www.apache.org/licenses/LICENSE-2.0.txt"
+                    }
+                }
+                developers {
+                    developer {
+                        id = "icommapi"
+                        name = "Infobank DevOps Team"
+                        email = "api@infobank.net"
+                    }
+                }
+                scm {
+                    connection = "scm:git:https://github.com/icomm-api/infobank-omni-sdk-java.git"
+                    developerConnection = "scm:git:ssh://github.com/icomm-api/infobank-omni-sdk-java.git"
+                    url = "https://github.com/icomm-api/infobank-omni-sdk-java"
+                }
+            }
+        }
+    }
+}
+
+sourceSets {
+    test {
+        java {
+            srcDirs = ['src/test/java']
+        }
+        resources {
+            srcDirs = ['src/test/resources']
+        }
+    }
+}
+
+task javadocJar(type: Jar) {
+    archiveClassifier.set('javadoc')
+    from javadoc
+}
+
+task sourcesJar(type: Jar) {
+    archiveClassifier.set('sources')
+    from sourceSets.main.allSource
+}
+
+tasks.withType(Javadoc) {
+    options.addStringOption('Xdoclint:none', '-quiet')
+    failOnError = false
+}
+
