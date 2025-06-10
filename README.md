@@ -225,4 +225,4 @@ client.get(ReportInquiryRequest.builder().msgKey("MSG_KEY").build());
 
 ## 📝 License
 
-이 프로젝트는 [MIT 라이선스](LICENSE)를 따릅니다.
+이 프로젝트는 [Apache 라이선스](LICENSE)를 따릅니다.
