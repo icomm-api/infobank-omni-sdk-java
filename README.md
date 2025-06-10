@@ -101,15 +101,15 @@ client.register(ftFile);
 
 ```java
 SmsRequest sms = SmsRequest.builder()
-  .to("01012345678")
-  .from("029302266")
+  .to("TO")
+  .from("FROM")
   .text("SMS 메시지입니다.")
   .build();
 SmsResponse smsRes = client.send(sms);
 
 MmsRequest lms = MmsRequest.builder()
-  .to("01012345678")
-  .from("029302266")
+  .to("TO")
+  .from("FROM")
   .text("LMS 메시지입니다.")
   .build();
 MmsResponse lmsRes = client.send(lms);
@@ -121,8 +121,8 @@ MmsResponse lmsRes = client.send(lms);
 
 ```java
 InternationalRequest inter = InternationalRequest.builder()
-  .to("+821012345678")
-  .from("029302266")
+  .to("TO")
+  .from("FROM")
   .text("해외 메시지 테스트")
   .build();
 
@@ -135,8 +135,8 @@ InternationalResponse res = client.send(inter);
 
 ```java
 RcsRequest rcs = RcsRequest.builder()
-  .to("01012345678")
-  .from("029302266")
+  .to("TO")
+  .from("FROM")
   .formatId("FORMAT_ID_SMS")
   .content(Standalone.builder().text("RCS SMS 메시지").build())
   .brandKey("BRAND_KEY")
@@ -152,7 +152,7 @@ RcsResponse res = client.send(rcs);
 ```java
 // 알림톡
 AlimtalkRequest alim = AlimtalkRequest.builder()
-  .to("01012345678")
+  .to("TO")
   .senderKey("SENDER_KEY")
   .templateCode("TEMPLATE_CODE")
   .text("알림톡 메시지입니다.")
@@ -162,7 +162,7 @@ client.send(alim);
 
 // 친구톡
 FriendtalkRequest friend = FriendtalkRequest.builder()
-  .to("01012345678")
+  .to("TO")
   .senderKey("SENDER_KEY")
   .text("친구톡 메시지입니다.")
   .msgType(MessageType.FT)
@@ -171,7 +171,7 @@ client.send(friend);
 
 // 브랜드 메시지
 BrandmessageRequest brand = BrandmessageRequest.builder()
-  .to("01012345678")
+  .to("TO")
   .senderKey("SENDER_KEY")
   .sendType("free")
   .text("브랜드 메시지입니다.")
@@ -186,7 +186,7 @@ client.send(brand);
 
 ```java
 OmniRequest omni = OmniRequest.builder()
-  .addMessage(SmsMessage.builder().from("029302266").text("Omni 메시지 테스트").build())
+  .addMessage(SmsMessage.builder().from("FROM").text("Omni 메시지 테스트").build())
   .addDestination(Destination.builder().to("01012345678").build())
   .build();
 
