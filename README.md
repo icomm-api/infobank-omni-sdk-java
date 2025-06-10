@@ -39,14 +39,14 @@ OMNI API 사용 전 다음을 준비해 주세요:
 <dependency>
     <groupId>io.github.icomm-api</groupId>
     <artifactId>infobank-omni-sdk-java</artifactId>
-    <version>1.0.0</version>
+    <version>1.1.0</version>
 </dependency>
 ```
 
 ### Gradle
 
 ```groovy
-implementation 'io.github.icomm-api:infobank-omni-sdk-java:1.0.0'
+implementation 'io.github.icomm-api:infobank-omni-sdk-java:1.1.0'
 ```
 
 🔍 [Maven Central 검색 바로가기](https://central.sonatype.com/artifact/io.github.icomm-api/infobank-omni-sdk-java)
@@ -225,4 +225,4 @@ client.get(ReportInquiryRequest.builder().msgKey("MSG_KEY").build());
 
 ## 📝 License
 
-이 프로젝트는 [Apache 라이선스](LICENSE.txt)를 따릅니다.
+이 프로젝트는 [Apache2.0 라이선스](LICENSE.txt)를 따릅니다.
