@@ -39,7 +39,7 @@ OMNI API 사용 전 다음을 준비해 주세요:
 <dependency>
     <groupId>io.github.icomm-api</groupId>
     <artifactId>infobank-omni-sdk-java</artifactId>
-    <version>1.1.0</version>
+    <version>1.1.2</version>
 </dependency>
 ```
 
