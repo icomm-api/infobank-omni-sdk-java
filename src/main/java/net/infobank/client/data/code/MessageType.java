@@ -10,7 +10,7 @@ public enum MessageType {
     /**
      * SMS(Short Message)
      */
-    SM, 
+    SM,
 
 	/**
 	 * LMS(Long Message)
@@ -20,13 +20,13 @@ public enum MessageType {
 	/**
 	 * MMS(Multimedia Message)
 	 */
-	MM, 
+	MM,
 
 	/**
 	 * International Message
 	 */
 	IM,
-	
+
 	/**
 	 * RCS SMS
 	 * (Rich Commnuication,
@@ -39,7 +39,7 @@ public enum MessageType {
 	 * (Rich Commnuication,
 	 *  Long Message)
 	 */
-	RL, 
+	RL,
 
 	/**
 	 * RCS MMS
@@ -57,7 +57,7 @@ public enum MessageType {
 	 * RCS Description Template
 	 */
 	RD,
-	
+
 	/**
 	 * RCS Cell Template
 	 */
@@ -80,27 +80,27 @@ public enum MessageType {
 
 	/**
 	 * Kakao Friendtalk Text
-	 */ 
-	FT, 
+	 */
+	FT,
 
 	/**
 	 * Kakao Friendtalk Image
-	 */ 
+	 */
 	FI,
-	
+
 	/**
 	 * Kakao Friendtalk Wideimage
-	 */ 
+	 */
 	FW,
 
 	/**
 	 * Kakao Friendtalk Wideimage Itemlist
-	 */ 
+	 */
 	FL,
 
 	/**
 	 * Kakao Friendtalk Carousel
-	 */ 
+	 */
 	FC,
 
 	/**
@@ -128,10 +128,12 @@ public enum MessageType {
 
 	private final String jsonValue;
 
+	// 기본 생성자: enum 이름을 그대로 사용 (SM → "SM")
 	MessageType() {
-		this.jsonValue = name().toLowerCase(); // 기본 대문자 → 소문자
+		this.jsonValue = name();
 	}
 
+	// 소문자 등 커스텀 값 지정용 생성자
 	MessageType(String jsonValue) {
 		this.jsonValue = jsonValue;
 	}
@@ -150,9 +152,8 @@ public enum MessageType {
 		}
 		throw new IllegalArgumentException("Unknown MessageType: " + value);
 	}
-
 	@Override
 	public String toString() {
-		return jsonValue;
+		return jsonValue; // 💡 항상 커스텀 값이 반환되도록 함
 	}
 }

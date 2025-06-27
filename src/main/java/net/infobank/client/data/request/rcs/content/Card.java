@@ -21,7 +21,7 @@ public class Card{
     private List<Button> button;
     private List<SubContent> subContent;
 
-    Card(net.infobank.client.data.request.rcs.content.Standalone.Builder builder) {
+    Card(Standalone.Builder builder) {
         text = builder.text;
         title = builder.title;
         media = builder.media;
@@ -37,7 +37,7 @@ public class Card{
         button = builder.button;
     }
 
-    Card(net.infobank.client.data.request.rcs.content.Template.Builder builder) {
+    Card(Template.Builder builder) {
         description = builder.description;
         userJson = builder.userJson;
         subContent = builder.subContent;

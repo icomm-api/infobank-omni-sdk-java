@@ -13,7 +13,6 @@ import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
 import org.apache.http.util.EntityUtils;
-import org.apache.http.util.EntityUtils;
 
 import net.infobank.client.core.exception.MethodFailedException;
 import net.infobank.client.core.exception.ResponseParseException;
@@ -34,7 +33,6 @@ public abstract class AbstractMethod<RequestT, ResponseT> {
                     .setHeader("User-Agent", httpWrapper.getHttpConfig().getUserAgent())
                     .setCharset(StandardCharsets.UTF_8)
                     .build();
-
             HttpResponse response = httpWrapper.getHttpClient().execute(httpRequest);
 
             try {

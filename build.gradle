@@ -22,9 +22,8 @@ dependencies {
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.15.2'
     testImplementation 'junit:junit:4.13.2'
     testImplementation 'org.mockito:mockito-inline:4.11.0'
-    implementation('org.apache.tika:tika-core:2.2.1') {
-        exclude group: 'org.slf4j', module: 'slf4j-api'
-    }
+
+    implementation 'org.apache.tika:tika-core:2.2.1'
 
 }
 

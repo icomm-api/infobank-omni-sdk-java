@@ -2,6 +2,7 @@ package net.infobank.client.data.code;
 
 import com.fasterxml.jackson.annotation.JsonCreator;
 import com.fasterxml.jackson.annotation.JsonValue;
+
 import static net.infobank.client.data.code.MessageType.*;
 
 import java.util.EnumSet;
@@ -59,7 +60,7 @@ public enum ServiceType {
 	 * <p>
 	 * Included message types: FT,FI,FW,FL,FC,FM,FA,FP
 	 */
-	BRANDMESSAGE(FT,FI,FW,FL,FC,FM,FA,FP, DEFAULT, WIDE, WIDE_ITEM_LIST, CAROUSEL_COMMERCE, CAROUSEL_FEED),
+	BRANDMESSAGE(DEFAULT, WIDE, WIDE_ITEM_LIST, CAROUSEL_COMMERCE, CAROUSEL_FEED),
 
 
 	// /**

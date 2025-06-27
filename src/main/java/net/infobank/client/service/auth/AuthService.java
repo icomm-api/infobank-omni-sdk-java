@@ -10,7 +10,6 @@ import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpUriRequest;
 import org.apache.http.client.methods.RequestBuilder;
 import org.apache.http.impl.client.BasicResponseHandler;
-
 import net.infobank.client.core.HttpConfig;
 import net.infobank.client.core.Util;
 import net.infobank.client.core.exception.ErrorResponseException;
@@ -26,6 +25,7 @@ import net.infobank.client.data.response.AuthResponse;
  * @since 2023-07-13
  */
 public class AuthService {
+
 
     /**
      * 인증 토큰 경로를 나타내는 상수입니다.

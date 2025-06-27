@@ -22,14 +22,17 @@ public final class FileRequest {
 	FileRequest(Builder builder) {
 		this.file = builder.file;
 		this.serviceType = builder.serviceType.toString();
-		try{
-			this.msgType = builder.msgType.toString();
-			this.subType = builder.subType.toString();
-		}catch(NullPointerException e){
-			this.msgType = "";
-			this.subType = "";
+
+		if (builder.msgType != null) {
+			this.msgType = builder.msgType.toString();  // toString()은 커스텀 jsonValue 반환
+		} else {
+			this.msgType = null;
 		}
+
+		this.subType = builder.subType != null ? builder.subType.toString() : null;
 	}
+
+
 
 	@JsonProperty("file")
 	public File getFile() {

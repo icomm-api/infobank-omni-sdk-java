@@ -14,7 +14,7 @@ public class Carousel {
     final java.util.List<List> list;
     final Tail tail;
 
-    public Carousel(Carousel.Builder builder) {
+    public Carousel(Builder builder) {
         this.head = builder.head;
         this.list = builder.list;
         this.tail = builder.tail;
@@ -49,7 +49,7 @@ public class Carousel {
     }
 
     public static Builder builder() {
-        return new Carousel.Builder();
+        return new Builder();
     }
 
     @JsonProperty("head")
