@@ -154,6 +154,6 @@ public enum MessageType {
 	}
 	@Override
 	public String toString() {
-		return jsonValue; // 💡 항상 커스텀 값이 반환되도록 함
+		return jsonValue;
 	}
 }
